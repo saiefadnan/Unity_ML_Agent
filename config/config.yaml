@@ -1,7 +1,7 @@
 behaviors:
   MyAgent:
     trainer_type: ppo
-    max_steps: 5000000
+    max_steps: 10000000
     time_horizon: 64        # Increased from 32 - better for navigation tasks
     hyperparameters:
       batch_size: 512       # Increased from 256 - more stable gradients
