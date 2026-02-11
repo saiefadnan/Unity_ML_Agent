@@ -31,7 +31,7 @@ behaviors:
       
 # Removed behavioral_cloning to use 32x32 resolution instead of 84x84
 # mlagents-learn config\trainer_config.yaml --run-id=MyFirstRun --train
-
+# mlagents-learn config\config.yaml --run-id=drone5 --env=G:\unity_files\thesis-1\build\thesis-1.exe --no-graphics --train
 
 # [INFO] Exported results\drone2.4\MyAgent\MyAgent-2899974.onnx
 
