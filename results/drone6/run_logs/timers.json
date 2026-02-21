@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1764687579",
+        "python_version": "3.8.0 (tags/v3.8.0:fa919fd, Oct 14 2019, 19:37:50) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "G:\\unity_files\\mlAgent\\venv\\Scripts\\mlagents-learn config\\MyAgentConfig.yaml --run-id=drone6 --train --resume",
+        "mlagents_version": "0.29.0",
+        "mlagents_envs_version": "0.29.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.9.0+cpu",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1764687589"
+    },
+    "total": 10.4889325,
+    "count": 1,
+    "self": 0.01148400000000116,
+    "children": {
+        "run_training.setup": {
+            "total": 0.09752159999999988,
+            "count": 1,
+            "self": 0.09752159999999988
+        },
+        "TrainerController.start_learning": {
+            "total": 10.3799269,
+            "count": 1,
+            "self": 0.0002403999999991413,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 10.3796632,
+                    "count": 1,
+                    "self": 10.3796632
+                },
+                "TrainerController._save_models": {
+                    "total": 2.3300000000503474e-05,
+                    "count": 1,
+                    "self": 2.3300000000503474e-05
+                }
+            }
+        }
+    }
+}

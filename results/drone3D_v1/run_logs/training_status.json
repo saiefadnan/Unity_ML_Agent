@@ -1,0 +1,65 @@
+{
+    "target_distance": {
+        "lesson_num": 0
+    },
+    "obstacle_count": {
+        "lesson_num": 0
+    },
+    "wind_strength": {
+        "lesson_num": 0
+    },
+    "DroneAgent": {
+        "checkpoints": [
+            {
+                "steps": 499900,
+                "file_path": "results\\drone3D_v1\\DroneAgent\\DroneAgent-499900.onnx",
+                "reward": -7.4978763060136275,
+                "creation_time": 1771091017.8457205,
+                "auxillary_file_paths": [
+                    "results\\drone3D_v1\\DroneAgent\\DroneAgent-499900.pt"
+                ]
+            },
+            {
+                "steps": 655400,
+                "file_path": "results\\drone3D_v1\\DroneAgent\\DroneAgent-655400.onnx",
+                "reward": -7.214332103729248,
+                "creation_time": 1771091851.1448326,
+                "auxillary_file_paths": [
+                    "results\\drone3D_v1\\DroneAgent\\DroneAgent-655400.pt"
+                ]
+            },
+            {
+                "steps": 676900,
+                "file_path": "results\\drone3d_v1\\DroneAgent\\DroneAgent-676900.onnx",
+                "reward": -7.118530962202284,
+                "creation_time": 1771092123.6951563,
+                "auxillary_file_paths": [
+                    "results\\drone3d_v1\\DroneAgent\\DroneAgent-676900.pt"
+                ]
+            },
+            {
+                "steps": 836100,
+                "file_path": "results\\drone3D_v1\\DroneAgent\\DroneAgent-836100.onnx",
+                "reward": -7.645221334822635,
+                "creation_time": 1771093329.5638561,
+                "auxillary_file_paths": [
+                    "results\\drone3D_v1\\DroneAgent\\DroneAgent-836100.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 836100,
+            "file_path": "results\\drone3D_v1\\DroneAgent.onnx",
+            "reward": -7.645221334822635,
+            "creation_time": 1771093329.5638561,
+            "auxillary_file_paths": [
+                "results\\drone3D_v1\\DroneAgent\\DroneAgent-836100.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.13.1+cpu"
+    }
+}

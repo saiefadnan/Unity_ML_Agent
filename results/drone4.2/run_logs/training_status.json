@@ -1,0 +1,65 @@
+{
+    "MyAgent": {
+        "checkpoints": [
+            {
+                "steps": 9924997,
+                "file_path": "results\\drone4.2\\MyAgent\\MyAgent-9924997.onnx",
+                "reward": 46.501341292262076,
+                "creation_time": 1770750599.1568418,
+                "auxillary_file_paths": [
+                    "results\\drone4.2\\MyAgent\\MyAgent-9924997.pt"
+                ]
+            },
+            {
+                "steps": 9949996,
+                "file_path": "results\\drone4.2\\MyAgent\\MyAgent-9949996.onnx",
+                "reward": 34.17470963654064,
+                "creation_time": 1770750695.0021467,
+                "auxillary_file_paths": [
+                    "results\\drone4.2\\MyAgent\\MyAgent-9949996.pt"
+                ]
+            },
+            {
+                "steps": 9974949,
+                "file_path": "results\\drone4.2\\MyAgent\\MyAgent-9974949.onnx",
+                "reward": 65.58696627616882,
+                "creation_time": 1770750795.9446983,
+                "auxillary_file_paths": [
+                    "results\\drone4.2\\MyAgent\\MyAgent-9974949.pt"
+                ]
+            },
+            {
+                "steps": 9999956,
+                "file_path": "results\\drone4.2\\MyAgent\\MyAgent-9999956.onnx",
+                "reward": 64.81030495961507,
+                "creation_time": 1770750892.8505294,
+                "auxillary_file_paths": [
+                    "results\\drone4.2\\MyAgent\\MyAgent-9999956.pt"
+                ]
+            },
+            {
+                "steps": 10000020,
+                "file_path": "results\\drone4.2\\MyAgent\\MyAgent-10000020.onnx",
+                "reward": 64.81030495961507,
+                "creation_time": 1770750892.9188232,
+                "auxillary_file_paths": [
+                    "results\\drone4.2\\MyAgent\\MyAgent-10000020.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 10000020,
+            "file_path": "results\\drone4.2\\MyAgent.onnx",
+            "reward": 64.81030495961507,
+            "creation_time": 1770750892.9188232,
+            "auxillary_file_paths": [
+                "results\\drone4.2\\MyAgent\\MyAgent-10000020.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.13.1+cpu"
+    }
+}

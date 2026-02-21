@@ -1,12 +1,12 @@
 behaviors:
-  MyAgent:
+  DroneAgent:
     trainer_type: ppo
     max_steps: 10000000
     time_horizon: 64        # Increased from 32 - better for navigation tasks
     hyperparameters:
       batch_size: 512       # Increased from 256 - more stable gradients
       buffer_size: 4096     # Increased from 2048 - more diverse experiences
-      learning_rate: 1.0e-4 # Reduced from 3.0e-4 - more stable learning
+      learning_rate: 5e-4 # Reduced from 3.0e-4 - more stable learning
       beta: 1.0e-4          # Reduced from 5.0e-4 - less random exploration
       epsilon: 0.15         # Reduced from 0.2 - smaller policy updates
       lambd: 0.95           # Reduced from 0.99 - faster credit assignment
@@ -16,11 +16,14 @@ behaviors:
       hidden_units: 128     # Increased from 64 - more capacity for ray perception
       num_layers: 2
       normalize: true
+      memory:
+        memory_size: 128
+        sequence_length: 64
     reward_signals:
       extrinsic:
         gamma: 0.99
         strength: 1.0
-    summary_freq: 5000
+    summary_freq: 10000
     checkpoint_interval: 25000
 
 
@@ -29,9 +32,79 @@ behaviors:
     #   strength: 0.5  
     #   steps: 50000  
       
-# Removed behavioral_cloning to use 32x32 resolution instead of 84x84
 # mlagents-learn config\trainer_config.yaml --run-id=MyFirstRun --train
 # mlagents-learn config\config.yaml --run-id=drone5 --env=G:\unity_files\thesis-1\build\thesis-1.exe --no-graphics --train
 
-# [INFO] Exported results\drone2.4\MyAgent\MyAgent-2899974.onnx
 
+# --------------------------------------------------------------------
+# Curriculum: start simple, increase difficulty
+# --------------------------------------------------------------------
+
+environment_parameters:
+
+  target_distance:  # Distance from drone to nearest target
+    curriculum:
+      - name: easy_distance
+        value: 0.0            # Start close to target
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 5.0
+          min_lesson_length: 300
+          signal_smoothing: true
+
+      - name: medium_distance
+        value: 5.0            # Slightly farther target
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 10.0
+          min_lesson_length: 300
+          signal_smoothing: true
+
+      - name: far_distance
+        value: 10.0           # Far target
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 15.0
+          min_lesson_length: 400
+          signal_smoothing: true
+
+      - name: max_distance
+        value: 16.0           # Far target
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 18.0
+          min_lesson_length: 500
+          signal_smoothing: true
+
+  obstacle_count:  # Number of obstacles in the scene
+    curriculum:
+      - name: no_obstacles
+        value: 0             # Start with no obstacles
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 5.0
+          min_lesson_length: 300
+          signal_smoothing: true
+
+      - name: few_obstacles
+        value: 3             # Add a few obstacles
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 10.0
+          min_lesson_length: 400
+          signal_smoothing: true
+
+      - name: max_obstacles
+        value: 6             # Max obstacles (your limit)
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 12.0
+          min_lesson_length: 500
+          signal_smoothing: true
