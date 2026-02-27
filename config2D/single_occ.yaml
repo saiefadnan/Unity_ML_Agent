@@ -1,0 +1,87 @@
+behaviors:
+  DroneAgent:
+    trainer_type: ppo
+    max_steps: 10000000
+    time_horizon: 128        # INCREASED - LSTM needs longer sequences for spatial memory
+    
+    hyperparameters:
+      batch_size: 512       
+      buffer_size: 5120      # Increased to match longer time_horizon
+      learning_rate: 2.0e-4  # REDUCED - more stable for LSTM training
+      beta: 0.01             # CRITICAL FIX - was 1.0e-4, now 100x higher for exploration!
+      epsilon: 0.2           # Increased back to 0.2 - allow bigger policy updates
+      lambd: 0.95           
+      num_epoch: 3
+      learning_rate_schedule: linear
+    
+    network_settings:
+      hidden_units: 256      # DOUBLED - ray perception needs more capacity
+      num_layers: 2
+      normalize: true
+      encoding_size: 256
+      memory:
+        memory_size: 128
+        sequence_length: 64  # Good for LSTM
+    
+    reward_signals:
+      extrinsic:
+        gamma: 0.995         # Slightly higher for long-term planning
+        strength: 1.0
+      curiosity:             # NEW - CRITICAL for exploration behind obstacles!
+        strength: 0.05       # Start conservative, can increase to 0.05-0.1
+        gamma: 0.99
+        learning_rate: 3.0e-4
+    
+    summary_freq: 10000
+    checkpoint_interval: 50000  # Less frequent saves
+    keep_checkpoints: 5         # Keep best checkpoints
+
+# --------------------------------------------------------------------
+# Curriculum: Revised for realistic progression
+# --------------------------------------------------------------------
+environment_parameters:
+  target_distance:
+    curriculum:
+      - name: easy_distance
+        value: 10.0
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 15
+          min_lesson_length: 500
+          signal_smoothing: true
+
+      - name: medium_distance
+        value: 15.0
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 20
+          min_lesson_length: 700
+          signal_smoothing: true
+
+      - name: far_distance
+        value: 20.0
+
+  obstacle_count:
+    curriculum:
+      - name: no_obstacles
+        value: 0
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 10
+          min_lesson_length: 500
+          signal_smoothing: true
+
+      - name: few_obstacles
+        value: 3
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 12
+          min_lesson_length: 800
+          signal_smoothing: true
+
+      - name: max_obstacles
+        value: 6

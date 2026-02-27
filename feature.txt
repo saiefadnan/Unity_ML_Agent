@@ -1,3 +1,7 @@
 latest models:
 
 drone6.2 - > single agent, curruculum learning, occluded mode, 2D
+command: mlagents-learn config2D\single_occ.yaml --run-id=drone6.* --env=G:\unity_files\thesis-1\build\thesis-1.exe --no-graphics --train
+
+drone7.1 - > multi agent, curruculum learning, gps mode, 2D
+command: mlagents-learn config2D\multi_gps.yaml --run-id=drone7.* --env=G:\unity_files\Multi_Drone2D\Build\Multi_Drone2D.exe --no-graphics --train

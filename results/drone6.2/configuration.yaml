@@ -45,7 +45,7 @@ behaviors:
     self_play: null
     behavioral_cloning: null
 env_settings:
-  env_path: null
+  env_path: G:\unity_files\thesis-1\build\thesis-1.exe
   env_args: null
   base_port: 5005
   num_envs: 1
@@ -61,14 +61,14 @@ engine_settings:
   time_scale: 20
   target_frame_rate: -1
   capture_frame_rate: 60
-  no_graphics: false
+  no_graphics: true
 environment_parameters:
   target_distance:
     curriculum:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6444
+          seed: 8972
           value: 0.0
       name: easy_distance
       completion_criteria:
@@ -81,7 +81,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6445
+          seed: 8973
           value: 5.0
       name: medium_distance
       completion_criteria:
@@ -94,7 +94,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6446
+          seed: 8974
           value: 10.0
       name: far_distance
       completion_criteria:
@@ -107,7 +107,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6447
+          seed: 8975
           value: 16.0
       name: max_distance
       completion_criteria:
@@ -122,7 +122,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6448
+          seed: 8976
           value: 0
       name: no_obstacles
       completion_criteria:
@@ -135,7 +135,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6449
+          seed: 8977
           value: 3
       name: few_obstacles
       completion_criteria:
@@ -148,7 +148,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6450
+          seed: 8978
           value: 6
       name: max_obstacles
       completion_criteria:

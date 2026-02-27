@@ -1,0 +1,96 @@
+behaviors:
+  DroneAgent:
+    trainer_type: ppo
+    max_steps: 10000000
+    time_horizon: 64
+    hyperparameters:
+      batch_size: 512
+      buffer_size: 4096
+      learning_rate: 5e-4
+      beta: 1.0e-4
+      epsilon: 0.15
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      hidden_units: 128
+      num_layers: 2
+      normalize: true
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    summary_freq: 20000
+    checkpoint_interval: 25000
+
+# --------------------------------------------------------------------
+# Curriculum: start simple, increase difficulty
+# --------------------------------------------------------------------
+
+environment_parameters:
+  target_distance:  # Distance from drone to nearest target
+    curriculum:
+      - name: easy_distance
+        value: 0.0            # Start close to target
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 5.0
+          min_lesson_length: 300
+          signal_smoothing: true
+
+      - name: medium_distance
+        value: 5.0            # Slightly farther target
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 10.0
+          min_lesson_length: 300
+          signal_smoothing: true
+
+      - name: far_distance
+        value: 10.0           # Far target
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 15.0
+          min_lesson_length: 400
+          signal_smoothing: true
+
+      - name: max_distance
+        value: 16.0           # Far target
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 18.0
+          min_lesson_length: 500
+          signal_smoothing: true
+
+  obstacle_count:  # Number of obstacles in the scene
+    curriculum:
+      - name: no_obstacles
+        value: 0             # Start with no obstacles
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 5.0
+          min_lesson_length: 300
+          signal_smoothing: true
+
+      - name: few_obstacles
+        value: 3             # Add a few obstacles
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 10.0
+          min_lesson_length: 400
+          signal_smoothing: true
+
+      - name: max_obstacles
+        value: 6             # Max obstacles (your limit)
+        completion_criteria:
+          measure: reward
+          behavior: DroneAgent
+          threshold: 12.0
+          min_lesson_length: 500
+          signal_smoothing: true
