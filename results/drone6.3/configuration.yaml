@@ -81,7 +81,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 8323
+          seed: 4006
           value: 10.0
       name: easy_distance
       completion_criteria:
@@ -94,7 +94,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 8324
+          seed: 4007
           value: 15.0
       name: medium_distance
       completion_criteria:
@@ -107,7 +107,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 8325
+          seed: 4008
           value: 20.0
       name: far_distance
       completion_criteria: null
@@ -116,7 +116,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 8326
+          seed: 4009
           value: 0
       name: no_obstacles
       completion_criteria:
@@ -129,7 +129,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 8327
+          seed: 4010
           value: 3
       name: few_obstacles
       completion_criteria:
@@ -142,7 +142,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 8328
+          seed: 4011
           value: 6
       name: max_obstacles
       completion_criteria: null
