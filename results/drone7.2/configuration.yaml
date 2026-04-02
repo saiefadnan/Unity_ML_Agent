@@ -58,7 +58,7 @@ behaviors:
     self_play: null
     behavioral_cloning: null
 env_settings:
-  env_path: null
+  env_path: G:\unity_files\Multi_Drone2D\Build\Multi_Drone2D.exe
   env_args: null
   base_port: 5005
   num_envs: 1
@@ -74,14 +74,14 @@ engine_settings:
   time_scale: 20
   target_frame_rate: -1
   capture_frame_rate: 60
-  no_graphics: false
+  no_graphics: true
 environment_parameters:
   hover_height:
     curriculum:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 794
+          seed: 217
           value: 5.0
       name: hover_training
       completion_criteria:
@@ -96,7 +96,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 795
+          seed: 218
           value: 0.0
       name: hover_training
       completion_criteria:
@@ -109,7 +109,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 796
+          seed: 219
           value: 8.0
       name: easy_distance
       completion_criteria:
@@ -122,7 +122,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 797
+          seed: 220
           value: 12.0
       name: medium_distance
       completion_criteria:
@@ -135,7 +135,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 798
+          seed: 221
           value: 20.0
       name: far_distance
       completion_criteria: null
@@ -144,7 +144,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 799
+          seed: 222
           value: 0
       name: hover_training
       completion_criteria:
@@ -157,7 +157,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 800
+          seed: 223
           value: 0
       name: no_obstacles
       completion_criteria:
@@ -170,7 +170,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 801
+          seed: 224
           value: 2
       name: few_obstacles
       completion_criteria:
@@ -183,7 +183,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 802
+          seed: 225
           value: 4
       name: more_obstacles
       completion_criteria:
@@ -196,7 +196,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 803
+          seed: 226
           value: 6
       name: max_obstacles
       completion_criteria: null

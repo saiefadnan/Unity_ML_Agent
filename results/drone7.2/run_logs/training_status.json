@@ -11,58 +11,58 @@
     "DroneAgent": {
         "checkpoints": [
             {
-                "steps": 7449934,
-                "file_path": "results\\drone7.2\\DroneAgent\\DroneAgent-7449934.onnx",
-                "reward": 64.62226343154907,
-                "creation_time": 1772875469.6130252,
+                "steps": 9849874,
+                "file_path": "results\\drone7.2\\DroneAgent\\DroneAgent-9849874.onnx",
+                "reward": 62.68606340885162,
+                "creation_time": 1772960269.2342744,
                 "auxillary_file_paths": [
-                    "results\\drone7.2\\DroneAgent\\DroneAgent-7449934.pt"
+                    "results\\drone7.2\\DroneAgent\\DroneAgent-9849874.pt"
                 ]
             },
             {
-                "steps": 7499997,
-                "file_path": "results\\drone7.2\\DroneAgent\\DroneAgent-7499997.onnx",
-                "reward": 55.32727466424306,
-                "creation_time": 1772875634.5438063,
+                "steps": 9899971,
+                "file_path": "results\\drone7.2\\DroneAgent\\DroneAgent-9899971.onnx",
+                "reward": 63.24930865624372,
+                "creation_time": 1772960419.6941102,
                 "auxillary_file_paths": [
-                    "results\\drone7.2\\DroneAgent\\DroneAgent-7499997.pt"
+                    "results\\drone7.2\\DroneAgent\\DroneAgent-9899971.pt"
                 ]
             },
             {
-                "steps": 7548033,
-                "file_path": "results\\drone7.2\\DroneAgent\\DroneAgent-7548033.onnx",
-                "reward": 59.736639976501465,
-                "creation_time": 1772875794.4665794,
+                "steps": 9949875,
+                "file_path": "results\\drone7.2\\DroneAgent\\DroneAgent-9949875.onnx",
+                "reward": 62.72504390989031,
+                "creation_time": 1772960587.399762,
                 "auxillary_file_paths": [
-                    "results\\drone7.2\\DroneAgent\\DroneAgent-7548033.pt"
+                    "results\\drone7.2\\DroneAgent\\DroneAgent-9949875.pt"
                 ]
             },
             {
-                "steps": 7549961,
-                "file_path": "results\\drone7.2\\DroneAgent\\DroneAgent-7549961.onnx",
-                "reward": 53.72219963073731,
-                "creation_time": 1772894626.6732166,
+                "steps": 9999882,
+                "file_path": "results\\drone7.2\\DroneAgent\\DroneAgent-9999882.onnx",
+                "reward": 61.36964342810891,
+                "creation_time": 1772960746.8713205,
                 "auxillary_file_paths": [
-                    "results\\drone7.2\\DroneAgent\\DroneAgent-7549961.pt"
+                    "results\\drone7.2\\DroneAgent\\DroneAgent-9999882.pt"
                 ]
             },
             {
-                "steps": 7559830,
-                "file_path": "results\\drone7.2\\DroneAgent\\DroneAgent-7559830.onnx",
-                "reward": 63.19921096165975,
-                "creation_time": 1772894905.5691783,
+                "steps": 10005042,
+                "file_path": "results\\drone7.2\\DroneAgent\\DroneAgent-10005042.onnx",
+                "reward": 63.001357587178546,
+                "creation_time": 1772960762.7459655,
                 "auxillary_file_paths": [
-                    "results\\drone7.2\\DroneAgent\\DroneAgent-7559830.pt"
+                    "results\\drone7.2\\DroneAgent\\DroneAgent-10005042.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 7559830,
+            "steps": 10005042,
             "file_path": "results\\drone7.2\\DroneAgent.onnx",
-            "reward": 63.19921096165975,
-            "creation_time": 1772894905.5691783,
+            "reward": 63.001357587178546,
+            "creation_time": 1772960762.7459655,
             "auxillary_file_paths": [
-                "results\\drone7.2\\DroneAgent\\DroneAgent-7559830.pt"
+                "results\\drone7.2\\DroneAgent\\DroneAgent-10005042.pt"
             ]
         }
     },
