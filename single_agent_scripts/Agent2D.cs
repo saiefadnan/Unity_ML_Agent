@@ -61,7 +61,6 @@ public class Agent2D : Agent
     private string logFilePath = "";
     private int episodeCount = 0;
     private int testEpisodesRun = 0;
-    private int stepCount = 0;
     private float episodeStartTime = 0f;
 
     public override void Initialize()
@@ -150,6 +149,10 @@ public class Agent2D : Agent
 
         try
         {
+            // Skip logging if goals not yet initialized (first episode)
+            if (goals == null || goals.Length == 0)
+                return;
+
             // Calculate path efficiency (ideal / actual)
             float efficiency = shortestPath > 0.001f ? shortestPath / Mathf.Max(distanceTraveled, 0.001f) : 0f;
             
@@ -167,13 +170,12 @@ public class Agent2D : Agent
         // Increment episode counter at start of new episode
         episodeCount++;
         testEpisodesRun++;
-        stepCount = 0;
         episodeStartTime = Time.time;
 
         // Stop after N episodes if in test mode
-        if (recordEvaluationMetrics && testEpisodesRun >= testEpisodeLimit)
+        if (recordEvaluationMetrics && testEpisodesRun > testEpisodeLimit)
         {
-            Debug.Log($"[Test Complete] Ran {testEpisodesRun} episodes. Results saved to: {logFilePath}");
+            Debug.Log($"[Test Complete] Ran {testEpisodesRun-1} episodes. Results saved to: {logFilePath}");
             #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
             #else

@@ -173,6 +173,7 @@ public class MultiEnvManager : MonoBehaviour
         public Vector2 velocity;
         public float hp;
         public bool isActive;
+        public int goalsReached;
     }
 
     public TeammateInfo GetTeammateInfo(int requestingAgent, int teammateSlot)
@@ -203,7 +204,8 @@ public class MultiEnvManager : MonoBehaviour
             position = agentObjects[actualIndex].transform.localPosition,
             velocity = droneRbs[actualIndex].linearVelocity,
             hp = agents[actualIndex].droneHP,
-            isActive = true
+            isActive = true,
+            goalsReached = agents[actualIndex].goalsReached
         };
     }
 
