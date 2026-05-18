@@ -5,3 +5,7 @@ command: mlagents-learn config2D\single_occ.yaml --run-id=drone6.* --env=G:\unit
 
 drone7.2 - > multi agent, curruculum learning, LSTM, 2D, ppo (complete)
 command: mlagents-learn config2D\multi_gps.yaml --run-id=drone7.* --env=G:\unity_files\Multi_Drone2D\Build\Multi_Drone2D.exe --no-graphics --train
+
+
+visualize the output of .md files:
+command: Markdown: Open Preview to the Side
