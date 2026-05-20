@@ -13,7 +13,7 @@ public class Agent2D : Agent
     public RayPerceptionSensorComponent2D raySensor;
     public AudioSource targetReached;
     public AudioSource droneHum;
-    public int maxStepCount = 2000;
+    public int maxStepCount = 4000;
     public EnvManager envManager;
 
     private Transform[] goals;

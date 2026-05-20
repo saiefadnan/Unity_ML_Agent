@@ -13,7 +13,9 @@ The core task is for one or more drone agents to find and "rescue" all victims i
 - **Failure Conditions**:
   - **Destruction**: The agent's HP drops to zero or below from colliding with obstacles or the ground at high velocity.
   - **Out of Bounds**: The agent flies outside the predefined arena boundaries (`y > 8`, `x < -16`, or `x > 16`).
-  - **Timeout**: The episode exceeds the maximum step count (`maxStepCount = 2000`).
+  - **Timeout**: The episode exceeds the maximum step count:
+    - **Single-Agent (S1)**: `maxStepCount = 4000`
+    - **Multi-Agent (S2)**: `maxStepCount = 2000`
   - **Idle Hovering**: The agent remains nearly stationary for an extended period (over 80 steps), indicating non-productive behavior.
 
 ## 2D Unity Environment
