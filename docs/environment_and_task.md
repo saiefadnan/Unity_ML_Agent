@@ -51,7 +51,7 @@ _Source: `scripts/single_agent_scripts/Agent2D.cs`_
   - `groundDistance / 10f` (1): Normalized distance to the ground directly below.
   - `droneHP / MAX_HP` (1): Current health points, normalized 0-1.
 - **Ray Perception Sensor (2D)**:
-  - The `RayPerceptionSensorComponent2D` provides additional observations by casting rays to detect `Obstacle`, `Ground`, and `Victim` tags.
+  - The `RayPerceptionSensorComponent2D` provides additional observations by casting rays (total 25) to detect `Obstacle`, `Ground`, and `Victim` tags.
 
 ### Multi-Agent (S2) Observation Space (23 Dimensions + Rays)
 

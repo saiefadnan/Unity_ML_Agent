@@ -13,7 +13,7 @@ This setup involved one agent tasked with finding 6 victims.
 | **Success Rate**          | **18.0%**     | 18 out of 100 episodes completed successfully.         |
 | **Avg Victims Rescued**   | 3.89 / 6      | On average, the agent found ~4 victims before failing. |
 | **Avg Steps Taken**       | 642           | Average for _successful_ episodes only.                |
-| **Completion Time**       | 12.84 s       | `Avg Steps * 0.02s/step`.                              |
+| **Completion Time**       | 12.83 s       | `Unrounded avg steps * 0.02s/step`.                    |
 | **Avg Drone HP**          | -2.94         | Average HP across all episodes (including crashes).    |
 | **Crash Rate**            | **74.0%**     | 74 episodes ended due to destruction.                  |
 | **Path Efficiency**       | 0.248         | Ratio of ideal path to actual distance traveled.       |
@@ -57,7 +57,7 @@ This setup involved a team of three agents tasked with finding 5 victims.
 | Metric              | Single-Agent (S1) | Multi-Agent (S2) | Improvement/Change                          |
 | ------------------- | ----------------- | ---------------- | ------------------------------------------- |
 | **Success Rate**    | 18.0%             | **99.0%**        | **+450%** (Drastic increase in reliability) |
-| **Completion Time** | 12.84 s           | **5.26 s**       | **-59%** (Significantly faster)             |
+| **Completion Time** | 12.83 s           | **5.26 s**       | **-59%** (Significantly faster)             |
 | **Crash Rate**      | 74.0%             | **1.0%**         | **-98.6%** (Vastly improved safety)         |
 | **Exploration**     | 12.5 cells        | **23.4 cells**   | **+87%** (More area covered)                |
 | **Path Efficiency** | 0.248             | 1.764            | Higher value indicates more direct paths.   |
