@@ -3,7 +3,7 @@
 _A Unity ML-Agents project focused on training autonomous drones for Search and Rescue (SAR) tasks in complex 2D environments. This repository contains the source code, trained models, and complete documentation for both single-agent and cooperative multi-agent systems._
 
 > [!NOTE]
-> This repository contains the **2D** baseline phase of the research project. For the 3D multi-agent drone system with full 6-DOF physics, see [Unity_ML_3DAgent](../Unity_ML_3DAgent). For the complete research narrative and 2D-to-3D experimental matrix, see the [Thesis Roadmap](../Unity_ML_3DAgent/THESIS_ROADMAP.md).
+> This repository contains the **2D** baseline phase of the research project. For the 3D multi-agent drone system with full 6-DOF physics, see [Unity_ML_3DAgent](https://github.com/saiefadnan/Unity_ML_3DAgent). For the complete research narrative and 2D-to-3D experimental matrix, see the [Thesis Roadmap](https://github.com/saiefadnan/Unity_ML_3DAgent/blob/main/THESIS_ROADMAP.md).
 
 ---
 
@@ -48,7 +48,7 @@ _A Unity ML-Agents project focused on training autonomous drones for Search and 
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/saiefadnan/Unity_ML_Agent.git
 cd Unity_ML_Agent
 
 # Set up Python virtual environment
@@ -112,17 +112,19 @@ tensorboard --logdir results
 
 ## Performance Summary
 
-Across 100 evaluation episodes:
+Evaluation results across 100 benchmark episodes (canonical metrics from [Table V](https://github.com/saiefadnan/Unity_ML_3DAgent/blob/main/output/result/TABLE_V_Test_Results.txt)):
 
 | Metric | Single-Agent (S1) | Multi-Agent (S2) | Improvement / Difference |
 |---|---|---|---|
-| **Success Rate** | 18.0% | **99.0%** | **+450%** (Drastic reliability increase) |
-| **Completion Time** | 12.83 s | **5.26 s** | **-59%** (Significantly faster) |
-| **Crash Rate** | 74.0% | **1.0%** | **-98.6%** (Vastly improved safety) |
-| **Exploration** | 12.5 cells | **23.4 cells** | **+87%** (Broader coverage) |
-| **Path Efficiency** | 0.248 | **1.764** | More direct target routing |
+| **Mission Success Rate** | 65.0% | **100.0%** | **+53.8%** (+1900% vs. Random) |
+| **Avg Victims Rescued** | 3.90 / 6 | **6.00 / 6** | **+53.8%** (100% arena clearance) |
+| **Avg Steps to Complete** | 553 | **266** | **-51.9%** (2× faster mission completion) |
+| **Completion Time (s)** | 27.67 s | **13.28 s** | **-52.0%** (Halved operational duration) |
+| **Avg Drone HP Survival** | -2.94 | **96.08** | **+103%** (Near-zero crash destruction) |
+| **Path Efficiency** | 0.240 | **1.726** | **+619%** (Direct, coordinated trajectories) |
+| **Area Coverage (cells)** | 12.5 | **23.3** | **+86.4%** (Comprehensive team search) |
 
-> Cooperative multi-agent coordination (S2) drastically eliminates catastrophic failure, completes search tasks in under half the time, and provides resilient coverage compared to single-agent operation.
+> Cooperative multi-agent coordination (S2) achieves a 100% mission clearance rate, doubles search speed, and virtually eliminates drone destruction compared to single-agent operation.
 
 ---
 
@@ -137,4 +139,4 @@ For a deep dive into the project's technical implementation, including environme
 - [Network Architecture](./docs/network_architecture.md) — Policy network dimensions and data flow
 - [Multi-Agent System](./docs/multi_agent.md) — Multi-drone cooperative behavior, GPS communication, and territory allocation
 - [Results and Analysis](./docs/results.md) — Quantitative performance breakdown and comparison tables
-- [Thesis Roadmap (3D Extension)](../Unity_ML_3DAgent/THESIS_ROADMAP.md) — Cross-environment 2D-to-3D thesis plan and ablation studies
+- [Thesis Roadmap (3D Extension)](https://github.com/saiefadnan/Unity_ML_3DAgent/blob/main/THESIS_ROADMAP.md) — Cross-environment 2D-to-3D thesis plan and ablation studies
