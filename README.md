@@ -2,10 +2,17 @@
 
 _A Unity ML-Agents project focused on training autonomous drones for Search and Rescue (SAR) tasks in complex 2D environments. This repository contains the source code, trained models, and complete documentation for both single-agent and cooperative multi-agent systems._
 
-![Multi-Agent System in Action](./contents/multi2D.png)
-
 > [!NOTE]
 > This repository contains the **2D** baseline phase of the research project. For the 3D multi-agent drone system with full 6-DOF physics, see [Unity_ML_3DAgent](../Unity_ML_3DAgent). For the complete research narrative and 2D-to-3D experimental matrix, see the [Thesis Roadmap](../Unity_ML_3DAgent/THESIS_ROADMAP.md).
+
+---
+
+## Visual Demonstrations
+
+| Single-Agent System (S1) | Cooperative Multi-Agent System (S2) |
+| :---: | :---: |
+| [![Single-Agent 2D](./contents/single2d.png)](./contents/single2d.mp4) | [![Multi-Agent 2D](./contents/multi2D.png)](./contents/multi2D.mp4) |
+| *Single drone navigating 2D obstacle arena*<br>[🎬 Watch S1 Flight Video](./contents/single2d.mp4) | *3-drone cooperative swarm searching arena*<br>[🎬 Watch S2 Flight Video](./contents/multi2D.mp4) |
 
 ---
 
