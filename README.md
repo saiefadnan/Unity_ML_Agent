@@ -11,7 +11,7 @@ _A Unity ML-Agents project focused on training autonomous drones for Search and 
 
 | Single-Agent System (S1) | Cooperative Multi-Agent System (S2) |
 | :---: | :---: |
-| [![Single-Agent 2D](./contents/single2d.png)](./contents/single2d.mp4) | [![Multi-Agent 2D](./contents/multi2D.png)](./contents/multi2D.mp4) |
+| [![Single-Agent 2D](./contents/single2d.png)](./contents/single2d.mp4) | [![Multi-Agent 2D](./contents/multi2d.png)](./contents/multi2D.mp4) |
 | *Single drone navigating 2D obstacle arena*<br>[🎬 Watch S1 Flight Video](./contents/single2d.mp4) | *3-drone cooperative swarm searching arena*<br>[🎬 Watch S2 Flight Video](./contents/multi2D.mp4) |
 
 ---
