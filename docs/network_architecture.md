@@ -48,37 +48,37 @@ The shape of the input tensor depends on the observation space of the specific s
 This diagram illustrates the flow of data through the network architecture.
 
 ```mermaid
-graph TD
-    subgraph Inputs
-        A[Vector Observations]
-        B[Raycast Observations]
+flowchart TD
+    subgraph Inputs["Inputs"]
+        A["Vector Observations"]
+        B["Raycast Observations"]
     end
 
-    subgraph Preprocessing
-        C[Input Normalization]
+    subgraph Preprocessing["Preprocessing"]
+        C["Input Normalization"]
     end
 
-    subgraph Encoding
-        D[Encoder MLP]
-        E[LSTM]
+    subgraph Encoding["Encoding"]
+        D["Encoder MLP"]
+        E["LSTM"]
     end
 
-    subgraph Heads
-        F[Policy Head (Actor)]
-        G[Value Head (Critic)]
+    subgraph Heads["Heads"]
+        F["Policy Head (Actor)"]
+        G["Value Head (Critic)"]
     end
 
-    subgraph Outputs
-        H[Action Distribution (Mean, StdDev)]
-        I[State-Value Estimate]
+    subgraph Outputs["Outputs"]
+        H["Action Distribution (Mean, StdDev)"]
+        I["State-Value Estimate"]
     end
 
     A --> C
     B --> C
     C --> D
-    D -- Encoded State --> E
-    E -- Memory-Enhanced State --> F
-    E -- Memory-Enhanced State --> G
+    D -- "Encoded State" --> E
+    E -- "Memory-Enhanced State" --> F
+    E -- "Memory-Enhanced State" --> G
     F --> H
     G --> I
 ```

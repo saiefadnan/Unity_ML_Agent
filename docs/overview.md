@@ -7,45 +7,45 @@ This project uses Unity ML-Agents to train autonomous drones to navigate complex
 ## System Diagram
 
 ```mermaid
-graph TD
-    subgraph Unity Environment
-        A[2D Physics World]
-        B(Drone Agent) -- Receives Actions --> A
-        A -- Emits Observations --> B
-        C{Victims}
-        D{Obstacles}
+flowchart TD
+    subgraph UnityEnv["Unity Environment"]
+        A["2D Physics World"]
+        B["Drone Agent"] -- "Receives Actions" --> A
+        A -- "Emits Observations" --> B
+        C{"Victims"}
+        D{"Obstacles"}
     end
 
-    subgraph ML-Agents Brain
-        E[PPO Algorithm]
-        F[Policy & Value Network]
-        G[LSTM Memory]
-        E -- Updates --> F
-        F -- Uses --> G
+    subgraph Brain["ML-Agents Brain"]
+        E["PPO Algorithm"]
+        F["Policy & Value Network"]
+        G["LSTM Memory"]
+        E -- "Updates" --> F
+        F -- "Uses" --> G
     end
 
-    B -- Sends Observations --> F
-    F -- Returns Actions --> B
+    B -- "Sends Observations" --> F
+    F -- "Returns Actions" --> B
 
-    subgraph Observations
-        O1[Agent State (Velocity, Position)]
-        O2[Raycast Sensor (LiDAR)]
-        O3[Task Info (Victims, Progress)]
-        O4[GPS Comms (Multi-Agent)]
+    subgraph Obs["Observations"]
+        O1["Agent State (Velocity, Position)"]
+        O2["Raycast Sensor (LiDAR)"]
+        O3["Task Info (Victims, Progress)"]
+        O4["GPS Comms (Multi-Agent)"]
     end
 
-    subgraph Actions
-        Ac1[Continuous: Force X, Y]
-        Ac2[Continuous: Torque]
+    subgraph Acts["Actions"]
+        Ac1["Continuous: Force X, Y"]
+        Ac2["Continuous: Torque"]
     end
 
-    F -- Processes --> O1
-    F -- Processes --> O2
-    F -- Processes --> O3
-    F -- Processes --> O4
+    F -- "Processes" --> O1
+    F -- "Processes" --> O2
+    F -- "Processes" --> O3
+    F -- "Processes" --> O4
 
-    Ac1 -- Applied to --> B
-    Ac2 -- Applied to --> B
+    Ac1 -- "Applied to" --> B
+    Ac2 -- "Applied to" --> B
 ```
 
 ## Repository Structure
