@@ -59,7 +59,7 @@ The project is organized into the following key directories:
 - `/results/`: Stores the trained model files (`.onnx`) and TensorBoard logs from various training runs.
 - `/scripts/`: Contains the C# source code for the Unity environment, split into `single_agent_scripts` and `multi_agent_scripts`.
 - `/venv/`: Python virtual environment for ML-Agents.
-- `feature.txt`, `guides.txt`, `README.md`: Root files containing high-level feature descriptions, development guides, and project readme.
+- `features.txt`, `guides.txt`, `README.md`: Root files containing high-level feature descriptions, development guides, and project readme.
 
 ## Related Docs
 
